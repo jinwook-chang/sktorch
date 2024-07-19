@@ -1,3 +1,4 @@
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -66,14 +67,19 @@ class LogisticRegression(PyTorchBaseEstimator, ClassifierMixin):
         self.y_ = y
 
         input_dim = X.shape[1]
-        model = LogsticRegressionModel(input_dim)
+        model = LogisticRegressionModel(input_dim)
         criterion = nn.BCELoss()
         optimizer = optim.Adam(model.parameters(), lr=self.lr)
 
         super().__init__(model, criterion, optimizer, self.n_epochs, self.batch_size)
-        return super().fit(X, y)
+        return super().fit(X, y.astype(float).reshape(-1, 1))
 
-    def predict(self, X):
+    def predict_proba(self, X):
         check_is_fitted(self)
         X = check_array(X)
-        return super().predict(X)
+        probas = super().predict(X)
+        return np.column_stack([1 - probas, probas])
+
+    def predict(self, X):
+        probas = self.predict_proba(X)
+        return self.classes_[probas.argmax(axis=1)]

@@ -17,7 +17,7 @@ Here's a simple example of how to use SKTorch:
 ## Linear Model
 
 [Linear Regression](examples/01_linear_regression.py)
-[Logistic Regression](TBD)
+[Logistic Regression](examples/02_logistic_regression.py)
 [Ridge Regression](TBD)
 [Lasso Regression](TBD)
 [Elastic Net](TBD)
