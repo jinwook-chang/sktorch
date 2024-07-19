@@ -14,13 +14,13 @@ pip install sktorch
 
 Here's a simple example of how to use SKTorch:
 
-## Linear Model
+### Linear Model
 
-[Linear Regression](examples/01_linear_regression.py)
-[Logistic Regression](examples/02_logistic_regression.py)
-[Ridge Regression](TBD)
-[Lasso Regression](TBD)
-[Elastic Net](TBD)
+* [Linear Regression](examples/01_linear_regression.py)
+* [Logistic Regression](examples/02_logistic_regression.py)
+* [Ridge Regression](TBD)
+* [Lasso Regression](TBD)
+* [Elastic Net](TBD)
 
 ## Contributing
 
