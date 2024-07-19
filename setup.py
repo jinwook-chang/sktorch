@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 setup(
     name="sktorch",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Jinwook Chang",
+    author_email="tranquil_morning@icloud.com",
     description="A scikit-learn style wrapper for PyTorch models",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
